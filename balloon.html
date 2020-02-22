@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body{height: 100%;}
+			body{
+				position: relative;
+				overflow: hidden;
+			}
+			
+			body{
+				/*background-image: url(img/bg.jpg);*/
+				background-repeat:no-repeat;
+				background-size:100% 100%;
+			}
+			.balloon{
+				position: absolute;
+				width: 96px;
+				height: 122px;
+				background-image: url(img/balloon.png);
+				background-repeat: no-repeat;
+				z-index:1;
+				/*background-position: 0px -122px;*/
+			}
+			
+			.baozha{
+				animation: move1 .5s ease-in-out forwards;
+			}
+			
+			@keyframes move1{
+				0%{ transform: scale(1);opacity: 1;}
+				100%{ transform: scale(20);opacity: 0; }
+			}
+			.frameIndex{position:absolute;right:20px;top:20px;}
+			.cloud{
+				width:200px;height: 100px;
+				background: url(img/cloud.png);
+				background-size:100% 100%;
+				position: absolute;
+				z-index:0;
+			}
+			.score{position: absolute;}
+			.gun{
+				position: absolute;
+				z-index:2;
+				width: 96px;top:200px;left:200px;
+				height: 96px;background: url(img/gun.png) no-repeat;
+			}
+			
+			.addscore{position:absolute;
+					z-index:4;
+					display:none;
+					left:30px;top:20px;
+					font-size:50px;
+					color:#fff;
+		    }
+			
+			.move1{
+				animation: addscore .5s ease-in-out forwards;display: block;
+			}
+			@keyframes addscore{
+				0%{transform: scale(3);}
+				100%{transform: scale(0);opacity: 0;}
+			}
+		</style> 
+	</head>
+	<body>
+		<div class="frameIndex"></div>
+		<script src="js/unit.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Balloon.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Cloud.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/background.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/addScore.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/score.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/gun.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/game.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+			game.start();
+		</script>
+	</body>
+</html>
